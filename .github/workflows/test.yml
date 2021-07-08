@@ -3,10 +3,11 @@ name: Test actions
 on:
   push:
     branches: [ master ]
-    tags:
-      - *
   pull_request:
   workflow_dispatch:
+  release:
+    types: # This configuration does not affect the page_build event above
+      - created
 
 jobs:
   test:
