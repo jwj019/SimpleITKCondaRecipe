@@ -18,8 +18,6 @@ jobs:
       run:
         if [[ $GITHUB_REF == 'refs/heads/master' ]] then
             echo "ANACONDA-TAG='dev'" >> "$GITHUB_ENV"
-        elif [[ $GITHUB_REF == 'refs/tags/*' ]] then
-            echo "ANACONDA-TAG='main'" >> "$GITHUB_ENV"
         fi
     - name: echo Anaconda tag
       run: echo ${{ env.anaconda-tag }}
