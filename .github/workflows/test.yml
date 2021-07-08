@@ -14,3 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: echo $GITHUB_REF
+    - name: set var
+      run:
+        if [[ $GITHUB_REF == 'refs/heads/master' ]]; then
+            echo "ANACONDA-TAG='dev'" >> "$GITHUB_ENV"
+        elif [[ $GITHUB_REF == refs/tags*]]
+            echo "ANACONDA-TAG='main'" >> "$GITHUB_ENV"
+        fi
+    - name: echo Anaconda tag
+      run: echo ${{ env.anaconda-tag }}
