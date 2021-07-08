@@ -1,0 +1,14 @@
+name: Test actions
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+  tags:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo $GITHUB_REF
