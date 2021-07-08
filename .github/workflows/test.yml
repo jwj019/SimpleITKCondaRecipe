@@ -16,7 +16,7 @@ jobs:
     - run: echo $GITHUB_REF
     - name: set var
       run:
-        if [[ $GITHUB_REF == 'refs/heads/master' ]] then
+        if [ $GITHUB_REF == 'refs/heads/master' ] then
             echo "ANACONDA-TAG='dev'" >> "$GITHUB_ENV"
         fi
     - name: echo Anaconda tag
