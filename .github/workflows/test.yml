@@ -21,5 +21,5 @@ jobs:
         elif [[ $GITHUB_REF =~ refs/tags/* ]]; then 
           echo "anaconda-tag='main'" >> $GITHUB_ENV;
         fi
-    - name: echo Anaconda tag
+    - name: echo Anaconda tag - ${{ env.anaconda-tag }}
       run: echo ${{ env.anaconda-tag }}
