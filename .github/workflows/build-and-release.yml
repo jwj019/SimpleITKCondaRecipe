@@ -3,9 +3,10 @@ name: Build and Release Conda
 on:
   push:
     branches: [ master ]
-    tags:
-      - "v*"
   pull_request:
+  create:
+    tags:
+      - v*
   release:
     types: 
       - created
