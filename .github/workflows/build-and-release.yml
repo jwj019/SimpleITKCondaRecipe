@@ -153,7 +153,7 @@ jobs:
       name: release
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'pull_request' }}
-    needs: [set-anaconda-tag]
+    needs: [build-windows, build-linux, build-mac, set-anaconda-tag]
 
     steps:
     - uses: actions/download-artifact@v2
